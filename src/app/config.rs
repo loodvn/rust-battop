@@ -5,8 +5,8 @@ use std::u64;
 use crate::app::ui::Units;
 
 fn parse_duration(raw: &str) -> Result<Duration, String> {
-    match u64::from_str(raw) {
-        Ok(seconds) if seconds > 0 => Ok(Duration::from_secs(seconds)),
+    match raw.parse::<f64>() {
+        Ok(seconds) if seconds > 0.0 => Ok(Duration::from_secs_f64(seconds)),
         _ => Err(format!("{} isn't a positive number", raw)),
     }
 }
