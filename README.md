@@ -37,10 +37,11 @@ $ yay -S battop
 
 ### From sources
 
-Clone the repo and run
+Clone the repo and run one of the following
 
 ```
-$ cargo build --release
+$ cargo install --path .  # Installs in ~/.cargo/bin and can be used as battop anywhere
+$ cargo build --release  # Installs in ./target/release/ and can be used as ./target/release/battop
 ```
 
 ### Other
